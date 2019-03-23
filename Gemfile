@@ -12,6 +12,13 @@ gem 'duktape'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem "devise"
+gem "rails_admin"
+gem "enum"
+gem "cancancan"
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
