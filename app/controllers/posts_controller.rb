@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
   def show
-  	@current_post = Post.find_by params[:id]
+  	@current_post = Post.find params[:id]
   end
 end

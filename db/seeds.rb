@@ -8,7 +8,7 @@
 
 # Admin
 
-Admin = User.create name: "admin", password: "admin14", role: "admin"
+Admin = User.create name: "admin",email: "admin@gmail.com", password: "admin14", role: "admin"
 
 # CATEGORIES
 
