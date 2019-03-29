@@ -1,4 +1,7 @@
 en:
+  categories:
+    show:
+      time: "%d %B %Y"
   posts:
     show:
       time: "%d %B %Y"

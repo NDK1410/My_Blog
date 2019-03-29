@@ -18,7 +18,7 @@
 								<hr>
 								<strong><%= @current_post.description %></strong>
 								<hr>
-								<p><%= @current_post.content %></p>
+								<p><%= @current_post.content.html_safe %></p>
 							</div>
 						</article>
 						<%= render "posts/comments" %>
