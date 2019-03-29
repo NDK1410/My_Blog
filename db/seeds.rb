@@ -16,11 +16,11 @@ C1 = Category.create name: "Fashion", user_id: Admin.id
 
 C2 = Category.create name: "Scent", user_id: Admin.id
 
-C3 = Category.create name: "Grooming", user_id: Admin.id
+C3 = Category.create name: "Hair & Grooming", user_id: Admin.id
 
 C4 = Category.create name: "Food & Drink", user_id: Admin.id
 
-C5 = Category.create name: "The Women", user_id: Admin.id
+C5 = Category.create name: "Women", user_id: Admin.id
 
 C6 = Category.create name: "Love & Life", user_id: Admin.id
 

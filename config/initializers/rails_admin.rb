@@ -10,12 +10,30 @@ RailsAdmin.config do |config|
 
   ## Models
   # config.model "Post" do
-  #   edit do
+  #   create do
   #     field :title
   #     field :description
   #     field :content, :ck_editor
+  #     field :user_id, :hidden do
+  #       default_value do
+  #         bindings[:view]._current_user.id
+  #       end
+  #     end
   #   end
-  # end
+  
+  config.model "Post" do
+    edit do
+      field :title
+      field :description
+      field :content, :ck_editor
+      field :category_id
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+  end
 
   ## == Cancan ==
   config.authorize_with :cancan
