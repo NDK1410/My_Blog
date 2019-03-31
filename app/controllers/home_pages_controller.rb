@@ -7,7 +7,8 @@ class HomePagesController < ApplicationController
     # @newest_scents = @posts_of_scents.newest_by_id.limit(4)
 
     # @scents = Category.second.posts.newest_by_id.limit(4)
-
+    
+    @categories = Category.all
   	@newest_posts = Post.newest_by_id.limit(3)
     
     @scent = Category.find_by name: "Scent"

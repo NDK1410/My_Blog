@@ -19,6 +19,7 @@ gem "cancancan"
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
+gem "friendly_id"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
