@@ -1,15 +1,11 @@
 <div class="col-md-3 sticky-parent">
 	<div class="sidebar" id="sticky_item">
+		<%= render "search/form" %>
+		
+		<% if @right_bar_posts.present? %>
 		<div class="side animate-box">
-			<div class="form-group">
-				<input type="text" class="form-control" id="search" placeholder="Enter to search...">
-				<button type="submit" class="btn submit btn-primary"><i class="fas fa-search"></i></button>
-			</div>
-		</div>
-
-		<div class="side animate-box">
-			<h2 class="sidebar-heading"><%= t".p" %></h2>
-			<% @right_bar_posts.each do |post| %>
+		  <h2 class="sidebar-heading"><%= t".p" %></h2>
+		  <% @right_bar_posts.each do |post| %>
 			<div class="f-blog">
 				<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
 				</a>
@@ -18,8 +14,9 @@
 					<p class="admin"><span><%= post.created_at.strftime(t".time") %></span></p>
 				</div>
 			</div>
-			<% end %>
+		  <% end %>
 		</div>
+		<% end %>
 
 		<div class="side animate-box">
 			<h2 class="sidebar-heading"><%= t".r" %></h2>

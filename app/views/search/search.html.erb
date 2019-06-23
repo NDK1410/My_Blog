@@ -1,0 +1,32 @@
+<div id="colorlib-main">
+	<div class="colorlib-blog">
+		<div class="container-wrap">
+			<div class="row">
+				<div class="col-md-9">
+					<% if @posts %>
+					<div class="content-wrap">
+						<% @posts.each do |post| %>
+						<article class="blog-entry-travel animate-box">
+							<div class="blog-img" style="background-image: url(images/blog-8.jpg);"></div>
+							<div class="desc">
+								<p class="meta">
+									<span class="cat"><a><%= post.category.name %></a></span>
+									<span class="date"><%= post.created_at.strftime(t".time") %></span>
+								</p>
+								<h2><%= link_to post.title, category_post_path(post.category, post) %></h2>
+								<p><%= post.description %></p>
+								<p><a href="single.html" class="btn btn-primary with-arrow">Read More <i class="icon-arrow-right22"></i></a></p>
+							</div>
+						</article>
+						<% end %>
+					</div>
+					<% else %>
+						<h2>Your search did not match any posts.</h2>
+					<% end %>
+				</div>
+				<%= render "categories/right_bar" %>
+			</div>
+			<%= render "categories/kaminari" %>
+		</div>
+	</div>
+</div>
