@@ -16,13 +16,17 @@ C1 = Category.create name: "Fashion", user_id: Admin.id
 
 C2 = Category.create name: "Scent", user_id: Admin.id
 
-C3 = Category.create name: "Hair & Grooming", user_id: Admin.id
+C3 = Category.create name: "Hair", user_id: Admin.id
 
-C4 = Category.create name: "Food & Drink", user_id: Admin.id
+C4 = Category.create name: "Grooming", user_id: Admin.id
 
-C5 = Category.create name: "Women", user_id: Admin.id
+C5 = Category.create name: "Food & Drink", user_id: Admin.id
 
-C6 = Category.create name: "Love & Life", user_id: Admin.id
+C6 = Category.create name: "Others", user_id: Admin.id
+
+C7 = Category.create name: "About", user_id: Admin.id
+
+C8 = Category.create name: "Contact", user_id: Admin.id
 
 # POSTS
 

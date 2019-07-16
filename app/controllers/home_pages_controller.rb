@@ -7,7 +7,6 @@ class HomePagesController < ApplicationController
     # @newest_scents = @posts_of_scents.newest_by_id.limit(4)
 
     # @scents = Category.second.posts.newest_by_id.limit(4)
-    
     @categories = Category.all
   	@newest_posts = Post.newest_by_id.limit(3)
     
@@ -17,10 +16,13 @@ class HomePagesController < ApplicationController
   	@fashion = Category.find_by name: "Fashion"
   	@fashion_newest_posts = Post.posts_of_category(@fashion.id).newest_by_id.limit(3)
 
-  	@hair = Category.find_by name: "Hair & Grooming"
+  	@hair = Category.find_by name: "Hair"
   	@hair_newest_posts = Post.posts_of_category(@hair.id).newest_by_id.limit(2)
 
+    @grooming = Category.find_by name: "Grooming"
+
   	@food = Category.find_by name: "Food & Drink"
-  	@women = Category.find_by name: "Women"
+
+  	@others = Category.find_by name: "Others"
   end
 end
