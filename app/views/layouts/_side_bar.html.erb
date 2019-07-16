@@ -3,13 +3,21 @@
 	<h1 id="colorlib-logo"><a href="index.html">Males In Town</a></h1>
 	<nav id="colorlib-main-menu" role="navigation">
 		<ul>
-			<li class="colorlib-active"><a href="index.html">Home</a></li>
-			<li><a href="style.html">Style</a></li>
-			<li><a href="fashion.html">Fashion</a></li>
-			<li><a href="travel.html">Travel</a></li>
-			<li><a href="sports.html">Sports</a></li>
-			<li><a href="video.html">Video</a></li>
-			<li><a href="archives.html">Archives</a></li>
+		  <% if @current_category %>
+		    <li><a><%= link_to "Home", root_path %></a></li>
+		    <% @categories.each do |category| %>
+		      <% if @current_category.name == category.name %>
+			    <li class="colorlib-active"><a><%= link_to category.name, category_path(category) %></a></li>
+		      <% else %>
+			    <li><a><%= link_to category.name, category_path(category) %></a></li>
+			  <% end %>
+			<% end %>
+		  <% else %>
+			<li class="colorlib-active"><a><%= link_to "Home", root_path %></a></li>
+			<% @categories.each do |category| %>
+			  <li><a><%= link_to category.name, category_path(category) %></a></li>
+			<% end %>
+		  <% end %>
 		</ul>
 	</nav>
 
