@@ -7,7 +7,7 @@
 		  <h2 class="sidebar-heading"><%= t".p" %></h2>
 		  <% @right_bar_posts.each do |post| %>
 			<div class="f-blog">
-				<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
+				<a href="blog.html" class="blog-img" style="background-image: url('<%= post.image.url %>');">
 				</a>
 				<div class="desc">
 					<h3><a href="blog.html"><%= post.title %></a></h3>
@@ -22,7 +22,7 @@
 			<h2 class="sidebar-heading"><%= t".r" %></h2>
             <% @recent_posts.each do |post| %>
 			<div class="f-blog">
-				<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
+				<a href="blog.html" class="blog-img" style="background-image: url('<%= post.image.url %>');">
 				</a>
 				<div class="desc">
 					<h3><a href="blog.html"><%= post.title %></a></h3>

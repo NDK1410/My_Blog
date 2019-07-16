@@ -20,13 +20,26 @@ RailsAdmin.config do |config|
   #       end
   #     end
   #   end
+  config.model "Category" do
+    edit do
+      field :image
+      field :name
+      field :description
+      field :user_id, :hidden do
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+    end
+  end
   
   config.model "Post" do
     edit do
+      field :image
       field :title
       field :description
       field :content, :ck_editor
-      field :category_id
+      field :category
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id

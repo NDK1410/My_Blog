@@ -2,54 +2,24 @@
 	<aside id="colorlib-hero" class="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-image: url(https://images.unsplash.com/photo-1553105386-5c85e3d70511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+			<% @newest_posts.each do |post| %>
+		   	<li style="background-image: url('<%= post.image.url %>');">
 		   		<div class="overlay"></div>
 		   		<div class="container-fluid">
 		   			<div class="row">
 			   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
 			   				<div class="slider-text-inner">
 			   					<div class="desc">
-			   						<p class="tag"><span><%= @newest_posts.first.category.name %></span></p>
-				   					<h1><a><%= link_to @newest_posts.first.title, category_post_path(@newest_posts.first.category, @newest_posts.first) %></a></h1>
-				   					<p><%= @newest_posts.first.description %></p>
-									</div>
+			   						<p class="tag"><span><%= post.category.name %></span></p>
+				   					<h1><a><%= link_to post.title, category_post_path(post.category, post) %></a></h1>
+				   					<p><%= post.description %></p>
+								</div>
 			   				</div>
 			   			</div>
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(https://images.unsplash.com/photo-1553100468-e03c16ee7fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
-		   		<div class="overlay"></div>
-		   		<div class="container-fluid">
-		   			<div class="row">
-			   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
-			   				<div class="slider-text-inner">
-			   					<div class="desc">
-			   						<p class="tag"><span><%= @newest_posts.second.category.name %></span></p>
-				   					<h1><a><%= link_to @newest_posts.second.title, category_post_path(@newest_posts.second.category, @newest_posts.second) %></a></h1>
-										<p><%= @newest_posts.second.description %></p>
-									</div>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(https://images.unsplash.com/photo-1553004377-d2a61160d1c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=861&q=80);">
-		   		<div class="overlay"></div>
-		   		<div class="container-fluid">
-		   			<div class="row">
-			   			<div class="col-md-12 col-xs-12 js-fullheight slider-text">
-			   				<div class="slider-text-inner">
-			   					<div class="desc">
-			   						<p class="tag"><span><%= @newest_posts.third.category.name %></span></p>
-				   					<h1><a><%= link_to @newest_posts.third.title, category_post_path(@newest_posts.third.category, @newest_posts.third) %></a></h1>
-										<p><%= @newest_posts.third.description %></p>
-									</div>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
+		   	<% end %>  	
 		  	</ul>
 	  	</div>
 	</aside>
@@ -60,7 +30,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80);">
+						<div class="blog-img" style="background-image: url('<%= @fashion.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @fashion.name, category_path(@fashion) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
@@ -72,7 +42,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1546367260-0d4ec8a3e349?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.first.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @fashion.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.first.title, category_post_path(@fashion, @fashion_newest_posts.first) %></a></h2>
@@ -82,7 +52,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1549393243-8d04905bec8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.second.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @fashion.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.second.title, category_post_path(@fashion, @fashion_newest_posts.second) %></a></h2>
@@ -92,7 +62,7 @@
 						</div>
 						<div class="col-md-12">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1441984344779-4716bd9e6b04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=821&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.last.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @fashion.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.last.title, category_post_path(@fashion, @fashion_newest_posts.last) %></a></h2>
@@ -106,31 +76,23 @@
 
 				<div class="col-md-7">
 					<div class="row">
+						<% @hair_newest_posts.each do |post|  %>
 						<div class="col-md-12">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= post.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @hair.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @hair_newest_posts.first.title, category_post_path(@hair, @hair_newest_posts.first) %></a></h2>
+										<h2 class="head-article"><a><%= link_to post.title, category_post_path(@hair, post) %></a></h2>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&auto=format&fit=crop&w=815&q=80);">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @hair.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @hair_newest_posts.last.title, category_post_path(@hair, @hair_newest_posts.last) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
+						<% end %>
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1523532855831-190c384cb39a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80);">
+						<div class="blog-img" style="background-image: url('<%= @hair.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @hair.name, category_path(@hair) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
@@ -142,7 +104,7 @@
 
 				<div class="col-md-6">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1544006593-1a0b9255782d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=744&q=80);">
+						<div class="blog-img" style="background-image: url('<%= @scent.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @scent.name, category_path(@scent) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
@@ -154,7 +116,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1506915925765-ed31516b9080?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url'<%= @scent_newest_posts.first.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @scent.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @scent_newest_posts.first.title, category_post_path(@scent, @scent_newest_posts.first) %></a></h2>
@@ -164,7 +126,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1547553641-a18afbab3c96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= @scent_newest_posts.second.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @scent.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @scent_newest_posts.second.title, category_post_path(@scent, @scent_newest_posts.second) %></a></h2>
@@ -174,7 +136,7 @@
 						</div>
 						<div class="col-md-12">
 							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url(https://images.unsplash.com/photo-1512303712963-792b49bff940?ixlib=rb-1.2.1&auto=format&fit=crop&w=621&q=80);">
+								<div class="blog-img blog-img2" style="background-image: url('<%= @scent_newest_posts.last.image.url %>');">
 									<div class="desc text-center">
 										<p class="tag"><span><%= @scent.name %></span></p>
 										<h2 class="head-article"><a><%= link_to @scent_newest_posts.last.title, category_post_path(@scent, @scent_newest_posts.last) %></a></h2>
@@ -188,7 +150,7 @@
 
 				<div class="col-md-4">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1527239492788-9bab047d3585?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80);">
+						<div class="blog-img" style="background-image: url('<%= @food.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @food.name, category_path(@food) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
@@ -198,7 +160,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1420593248178-d88870618ca0?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);">
+						<div class="blog-img" style="background-image: url('<%= @grooming.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @grooming.name, category_path(@grooming) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
@@ -208,7 +170,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url(https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+						<div class="blog-img" style="background-image: url('<%= @others.image.url %>');">
 							<div class="desc text-center">
 								<h2 class="head-article"><a><%= link_to @others.name, category_path(@others) %></a></h2>
 								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
