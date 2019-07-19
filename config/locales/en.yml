@@ -2,10 +2,19 @@ en:
   categories:
     show:
       time: "%d %B %Y"
+    right_bar:
+      time: "%d %B %Y"
+      p: "In Category"
+      r: "Recent Blog"
+      s: "Subscribe"
   posts:
     show:
       time: "%d %B %Y"
     right_bar:
       time: "%d %B %Y"
+      c: Categories
+      p: "In Category"
+      r: "Recent Blog"
+      s: "Subscribe"
     comments:
       time: "%d %B %Y"
