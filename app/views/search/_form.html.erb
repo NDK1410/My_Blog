@@ -1,0 +1,9 @@
+<div class="side animate-box">
+	<%= form_tag search_path, method: :get, class: "form-group" do %>
+		<%= text_field_tag :search, params[:search], class: "form-control", id: "search", placeholder: "Enter to search...", autocomplete: "off" %>
+		<button type="submit" class="btn submit btn-primary">
+			<i class="fas fa-search"></i>
+			<% submit_tag name: nil %>
+		</button>
+	<% end %>
+</div>
