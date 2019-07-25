@@ -3,6 +3,7 @@
 		<div class="container-wrap">
 			<div class="row">
 				<div class="col-md-9">
+					<% cache @current_category do %>
 					<div class="content-wrap">
 						<% @current_category.posts.each do |post| %>
 						<article class="blog-entry-travel animate-box">
@@ -19,10 +20,11 @@
 						</article>
 						<% end %>
 					</div>
+					<% end %>
 				</div>
-				<%= render "right_bar" %>
+				<%= render "right_bar", cached: true %>
 			</div>
-			<%= render "kaminari" %>
+			<%= render "kaminari", cached: true %>
 		</div>
 	</div>
 </div>

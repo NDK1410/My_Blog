@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
-  belongs_to :category
+  belongs_to :category, touch: true
   extend FriendlyId
   friendly_id :title, use: [:slugged]
   searchkick text_start: [:content]

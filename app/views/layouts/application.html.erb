@@ -59,7 +59,7 @@
 
   <body>
     <div id="colorlib-page">
-      <%= render "layouts/side_bar" %>
+      <%= render "layouts/side_bar", cached: true %>
       <%= yield %>
     </div>
     <%= javascript_include_tag("jquery.min.js") %>

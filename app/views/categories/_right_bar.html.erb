@@ -1,19 +1,20 @@
 <div class="col-md-3 sticky-parent">
 	<div class="sidebar" id="sticky_item">
-		<%= render "search/form" %>
+		<%= render "search/form", cached: true %>
 		
 		<% if @right_bar_posts.present? %>
 		<div class="side animate-box">
 		  <h2 class="sidebar-heading"><%= t".p" %></h2>
 		  <% @right_bar_posts.each do |post| %>
+		  <% cache post do %>
 			<div class="f-blog">
-				<a href="blog.html" class="blog-img" style="background-image: url('<%= post.image.url %>');">
-				</a>
+				<a class="blog-img" style="background-image: url('<%= post.image.url %>');"></a>
 				<div class="desc">
-					<h3><a href="blog.html"><%= post.title %></a></h3>
+					<h3><a><%= link_to post.title, category_post_path(post.category, post) %></a></h3>
 					<p class="admin"><span><%= post.created_at.strftime(t".time") %></span></p>
 				</div>
 			</div>
+		  <% end %>
 		  <% end %>
 		</div>
 		<% end %>
@@ -21,14 +22,15 @@
 		<div class="side animate-box">
 			<h2 class="sidebar-heading"><%= t".r" %></h2>
             <% @recent_posts.each do |post| %>
+            <% cache post do %>
 			<div class="f-blog">
-				<a href="blog.html" class="blog-img" style="background-image: url('<%= post.image.url %>');">
-				</a>
+				<a class="blog-img" style="background-image: url('<%= post.image.url %>');"></a>
 				<div class="desc">
-					<h3><a href="blog.html"><%= post.title %></a></h3>
+					<h3><a><%= link_to post.title, category_post_path(post.category, post) %></a></h3>
 					<p class="admin"><span><%= post.created_at.strftime(t".time") %></span></p>
 				</div>
 			</div>
+			<% end %>
 			<% end %>
 		</div>
 
