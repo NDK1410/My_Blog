@@ -6,7 +6,7 @@
 					<div class="content-wrap">
 						<% @current_category.posts.each do |post| %>
 						<article class="blog-entry-travel animate-box">
-							<div class="blog-img" style="background-image: url(images/blog-8.jpg);"></div>
+							<div class="blog-img" style="background-image: url('<%= post.image.url %>');"></div>
 							<div class="desc">
 								<p class="meta">
 									<span class="cat"><a><%= @current_category.name %></a></span>
