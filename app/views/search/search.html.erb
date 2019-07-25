@@ -6,6 +6,7 @@
 					<% if @posts %>
 					<div class="content-wrap">
 						<% @posts.each do |post| %>
+						<% cache post do %>
 						<article class="blog-entry-travel animate-box">
 							<div class="blog-img" style="background-image: url(images/blog-8.jpg);"></div>
 							<div class="desc">
@@ -19,14 +20,15 @@
 							</div>
 						</article>
 						<% end %>
+						<% end %>
 					</div>
 					<% else %>
 						<h2>Your search did not match any posts.</h2>
 					<% end %>
 				</div>
-				<%= render "categories/right_bar" %>
+				<%= render "categories/right_bar", cached: true %>
 			</div>
-			<%= render "categories/kaminari" %>
+			<%= render "categories/kaminari", cached: true %>
 		</div>
 	</div>
 </div>

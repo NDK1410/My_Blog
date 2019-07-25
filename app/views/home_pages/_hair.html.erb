@@ -1,0 +1,28 @@
+<div class="col-md-7">
+	<div class="row">
+		<% @hair_newest_posts.each do |post|  %>
+		<% cache post do %>
+		<div class="col-md-12">
+			<div class="blog-entry animate-box">
+				<div class="blog-img blog-img2" style="background-image: url('<%= post.image.url %>');">
+					<div class="desc text-center">
+						<p class="tag"><span><%= @hair.name %></span></p>
+						<h2 class="head-article"><a><%= link_to post.title, category_post_path(@hair, post) %></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+</div>
+<div class="col-md-5">
+	<div class="blog-entry animate-box">
+		<div class="blog-img" style="background-image: url('<%= @hair.image.url %>');">
+			<div class="desc text-center">
+				<h2 class="head-article"><a><%= link_to @hair.name, category_path(@hair) %></a></h2>
+				<p><%= @hair.description %></p>
+			</div>
+		</div>
+	</div>
+</div>

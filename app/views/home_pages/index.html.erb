@@ -3,6 +3,7 @@
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
 			<% @newest_posts.each do |post| %>
+			<% cache post do %>
 		   	<li style="background-image: url('<%= post.image.url %>');">
 		   		<div class="overlay"></div>
 		   		<div class="container-fluid">
@@ -19,6 +20,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
+		   	<% end %>
 		   	<% end %>  	
 		  	</ul>
 	  	</div>
@@ -28,156 +30,13 @@
 	<div class="colorlib-blog">
 		<div class="container-wrap">
 			<div class="row">
-				<div class="col-md-6">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @fashion.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @fashion.name, category_path(@fashion) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.first.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @fashion.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.first.title, category_post_path(@fashion, @fashion_newest_posts.first) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.second.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @fashion.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.second.title, category_post_path(@fashion, @fashion_newest_posts.second) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.last.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @fashion.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @fashion_newest_posts.last.title, category_post_path(@fashion, @fashion_newest_posts.last) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<%= render "fashion", cached:true %>
 
+				<%= render "hair", cached:true %>
 
-				<div class="col-md-7">
-					<div class="row">
-						<% @hair_newest_posts.each do |post|  %>
-						<div class="col-md-12">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= post.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @hair.name %></span></p>
-										<h2 class="head-article"><a><%= link_to post.title, category_post_path(@hair, post) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-						<% end %>
-					</div>
-				</div>
-				<div class="col-md-5">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @hair.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @hair.name, category_path(@hair) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<%= render "scent", cached:true %>
 
-
-				<div class="col-md-6">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @scent.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @scent.name, category_path(@scent) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url'<%= @scent_newest_posts.first.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @scent.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @scent_newest_posts.first.title, category_post_path(@scent, @scent_newest_posts.first) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= @scent_newest_posts.second.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @scent.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @scent_newest_posts.second.title, category_post_path(@scent, @scent_newest_posts.second) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="blog-entry animate-box">
-								<div class="blog-img blog-img2" style="background-image: url('<%= @scent_newest_posts.last.image.url %>');">
-									<div class="desc text-center">
-										<p class="tag"><span><%= @scent.name %></span></p>
-										<h2 class="head-article"><a><%= link_to @scent_newest_posts.last.title, category_post_path(@scent, @scent_newest_posts.last) %></a></h2>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-md-4">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @food.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @food.name, category_path(@food) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @grooming.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @grooming.name, category_path(@grooming) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-entry animate-box">
-						<div class="blog-img" style="background-image: url('<%= @others.image.url %>');">
-							<div class="desc text-center">
-								<h2 class="head-article"><a><%= link_to @others.name, category_path(@others) %></a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<%= render "under_categories", cached:true %>
 			</div>
 		</div>
 	</div>			

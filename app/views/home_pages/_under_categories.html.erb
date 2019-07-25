@@ -1,0 +1,30 @@
+<div class="col-md-4">
+	<div class="blog-entry animate-box">
+		<div class="blog-img" style="background-image: url('<%= @food.image.url %>');">
+			<div class="desc text-center">
+				<h2 class="head-article"><a><%= link_to @food.name, category_path(@food) %></a></h2>
+				<p><%= @food.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="blog-entry animate-box">
+		<div class="blog-img" style="background-image: url('<%= @grooming.image.url %>');">
+			<div class="desc text-center">
+				<h2 class="head-article"><a><%= link_to @grooming.name, category_path(@grooming) %></a></h2>
+				<p><%= @grooming.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="blog-entry animate-box">
+		<div class="blog-img" style="background-image: url('<%= @others.image.url %>');">
+			<div class="desc text-center">
+				<h2 class="head-article"><a><%= link_to @others.name, category_path(@others) %></a></h2>
+				<p><%= @others.description %></p>
+			</div>
+		</div>
+	</div>
+</div>

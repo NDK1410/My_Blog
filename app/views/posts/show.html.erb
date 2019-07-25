@@ -3,6 +3,7 @@
 		<div class="container-wrap">
 			<div class="row">
 				<div class="col-md-9">
+					<% cache @current_post do %>
 					<div class="content-wrap">
 						<article class="animate-box">
 							<div class="blog-img" style="background-image: url('<%= @current_post.image.url %>');"></div>
@@ -21,11 +22,12 @@
 								<p><%= @current_post.content.html_safe %></p>
 							</div>
 						</article>
-						<%= render "posts/comments" %>
-						<%= render "posts/form_comments" %>
+						<%= render "posts/comments", cached: true %>
+						<%= render "posts/form_comments", cached: true %>
 					</div>
+					<% end %>
 				</div>
-				<%= render "categories/right_bar" %>
+				<%= render "categories/right_bar", cached: true %>
 			</div>
 		</div>
 	</div>

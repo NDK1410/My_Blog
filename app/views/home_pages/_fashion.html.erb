@@ -1,0 +1,44 @@
+<div class="col-md-6">
+	<div class="blog-entry animate-box">
+		<div class="blog-img" style="background-image: url('<%= @fashion.image.url %>');">
+			<div class="desc text-center">
+				<h2 class="head-article"><a><%= link_to @fashion.name, category_path(@fashion) %></a></h2>
+				<p><%= @fashion.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="blog-entry animate-box">
+				<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.first.image.url %>');">
+					<div class="desc text-center">
+						<p class="tag"><span><%= @fashion.name %></span></p>
+						<h2 class="head-article"><a><%= link_to @fashion_newest_posts.first.title, category_post_path(@fashion, @fashion_newest_posts.first) %></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="blog-entry animate-box">
+				<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.second.image.url %>');">
+					<div class="desc text-center">
+						<p class="tag"><span><%= @fashion.name %></span></p>
+						<h2 class="head-article"><a><%= link_to @fashion_newest_posts.second.title, category_post_path(@fashion, @fashion_newest_posts.second) %></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="blog-entry animate-box">
+				<div class="blog-img blog-img2" style="background-image: url('<%= @fashion_newest_posts.last.image.url %>');">
+					<div class="desc text-center">
+						<p class="tag"><span><%= @fashion.name %></span></p>
+						<h2 class="head-article"><a><%= link_to @fashion_newest_posts.last.title, category_post_path(@fashion, @fashion_newest_posts.last) %></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
