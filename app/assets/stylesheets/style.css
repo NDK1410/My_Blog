@@ -252,7 +252,22 @@ figure {
         background-size: cover;
         background-position: bottom center;
         min-height: 400px;
-        position: relative; }
+        position: relative;
+        /* Grayscale */
+        /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+        filter: gray; /* IE5+ */
+        -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+        -webkit-transition: all .8s ease-in-out;
+        /* Grayscale */ }
+
+        /* Hover Grayscale */      
+          #colorlib-hero .flexslider .slides li:hover {
+          filter: none;
+          -webkit-filter: grayscale(0);
+          -webkit-transform: scale(1.01);
+        }
+        /* Hover Grayscale */
+
         #colorlib-hero .flexslider .slides li .overlay {
           position: absolute;
           top: 0;
@@ -539,6 +554,12 @@ body.offcanvas {
         .blog-entry .blog-img .desc.desc2 h2 {
           margin-bottom: 30px; }
     .blog-entry .blog-img.blog-img2 {
+      /* Grayscale */
+      /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+      filter: gray; /* IE5+ */
+      -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+      -webkit-transition: all .8s ease-in-out;
+      /* Grayscale */
       height: 235px;
       margin-bottom: 30px; }
       @media screen and (max-width: 768px) {
@@ -548,6 +569,14 @@ body.offcanvas {
         font-size: 20px; }
       .blog-entry .blog-img.blog-img2 p {
         margin-bottom: 5px; }
+
+      /* Hover Grayscale */      
+      .blog-entry .blog-img.blog-img2:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      -webkit-transform: scale(1.01);
+      }
+      /* Hover Grayscale */  
 
 .blog-entry-style {
   z-index: 0;
